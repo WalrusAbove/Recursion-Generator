@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Strange Recursion Generator</title>
+
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <style>
+    #main {
+      text-align: center;
+      margin: 2em 0;
+    }
+    #main dl dt {
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+    }
+    #main dl dd {
+      padding: 0;
+      margin: 0.5em 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pure-g">
+    <div class="pure-u-1-5"></div>
+    <div class="pure-u-3-5" id="main">
+      <h1>Strange Recursion Generator</h1>
+      <dl>
+        <dt>Level</dt>
+        <dd id="level"></dd>
+        <dt>Law</dt>
+        <dd id="law"></dd>
+        <dt>Race</dt>
+        <dd id="race"></dd>
+        <dt>Foci</dt>
+        <dd id="foci"></dd>
+        <dt>Skills</dt>
+        <dd id="skills"></dd>
+        <dt>Age/Size</dt>
+        <dd id="age"></dd>
+        <dt>Spark Concentration %</dt>
+        <dd id="spark"></dd>
+        <dt>Trait</dt>
+        <dd id="trait"></dd>
+      </dl>
+      <button id="recurse" class="pure-button pure-button-primary">Generate Recursion</button></div>
+    <div class="pure-u-1-5"></div>
+  </div>
+  <script>
+    var laws = ["Standard", "Substandard", "Magic", "MadScience", "Psionics", "Exotic"],
+        races = ["Human", "Qephilim", "Mutant", "Kro", "Vampire", "Sacrosanct", "Talking Animal"],
+        foci = ["Abides in Stone", "Awakens Dangerous Psychic Talent", "Carries a Quiver", "Channels Sinfire", "Conducts Weird Science", "Embraces Native Ancestry", "Entertains", "Infiltrates", "Integrates Weaponry", "Is Licensed to Carry", "Leads", "Lives in the Wilderness", "Looks for Trouble", "Metamorphosizes", "Operates Undercover", "Practices Soul Sorcery", "Processes Information", "Regenerates Tissue", "Sheperds the Dead", "Slays Dragons", "Solves Mysteries", "Spawns", "Translates (Special Focus)", "Wields Two Weapons At Once", "Words Miracles", "Works the System"],
+        skills = ["Astronomy", "Balancing", "Biology", "Botany", "Carrying", "Climbing", "Deceiving", "Escaping", "Geography", "Geology", "Healing", "History", "Identifying", "Initiative", "Intimidation", "Jumping", "Leatherworking", "Lockpicking", "The Strange", "Metalworking", "Perception", "Persuasion", "Philosophy", "Pickpocketing", "Repairing", "Riding", "Smashing", "Sneaking", "Swimming", "Woodworking"],
+        ages = ["Pocket Dimension", "Young Recursion", "Juvenile Recursion", "Developed Recursion", "Old Recursion", "Ascendant Recursion"],
+        traits = ["Appealing", "Brash", "Clever", "Fast", "Graceful", "Intelligent", "Lucky", "Sharp-Eyed", "Skeptical", "Stealthy", "Strange", "Strong", "Tough", "Strong-Willed", "Learned", "Rugged", "Craven", "Cruel", "Doomed", "Clumsy", "Dishonorable", "Driven", "Empathic", "Exiled", "Foolish", "Guarded", "Hardy", "Hideous", "Honorable", "Impulsive", "Inquisitive", "Mad", "Naive", "Noble", "Perceptive", "Tongue-Tied", "Vengeful", "Weird"];
+    
+    function getRandomSubarray(arr, size) {
+      var shuffled = arr.slice(0), i = arr.length, temp, index;
+      while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+      }
+      return shuffled.slice(0, size);
+    }
+    
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    
+    function generateRecursion() {
+      document.getElementById('level').innerHTML = getRandomInt(1, 10);
+      document.getElementById('law').innerHTML = getRandomSubarray(laws, 1).join(', ');
+      document.getElementById('race').innerHTML = getRandomSubarray(races, getRandomInt(1,2)).join('<br>');
+      document.getElementById('foci').innerHTML = getRandomSubarray(foci, getRandomInt(2, 6)).join('<br>');
+      document.getElementById('skills').innerHTML = getRandomSubarray(skills, getRandomInt(1,3)).join('<br>');
+      document.getElementById('age').innerHTML = getRandomSubarray(ages, 1).join(', ');
+      document.getElementById('spark').innerHTML = getRandomInt(1, 100) + '%';
+      document.getElementById('trait').innerHTML = getRandomSubarray(traits, 1).join(', ');
+    }
+    
+    document.getElementById('recurse').onclick=generateRecursion;
+    generateRecursion();
+  </script>
+</body>
+</html>
