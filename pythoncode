@@ -1,0 +1,36 @@
+def Recursion():
+    import random
+    #Imports file random.py
+
+    level = random.randint(1, 10)
+    print("Level: ", level)
+    #Displays a recursion Level between 1-10
+
+    law = random.sample({"Standard", "Substandard", "Magic", "MadScience", "Psionics", "Exotic"}, 1)
+    print("Laws: ", law)
+    #Picks a random natural law and displays it under Laws:
+
+    race = random.sample({"Human", "Qephilim", "Mutant", "Kro", "Vampire", "Sacrosanct", "Talking Animal"}, (random.randint(1, 2)))
+    print("Playable Races: ", race)
+    #Picks a random race from pre-made races in The Strange corebook. Human is default.
+
+    foci = random.sample({"Abides in Stone", "Awakens Dangerous Psychic Talent", "Carries a Quiver", "Channels Sinfire", "Conducts Weird Science", "Embraces Native Ancestry", "Entertains", "Infiltrates", "Integrates Weaponry", "Is Licensed to Carry", "Leads", "Lives in the Wilderness", "Looks for Trouble", "Metamorphosizes", "Operates Undercover", "Practices Soul Sorcery", "Processes Information", "Regenerates Tissue", "Sheperds the Dead", "Slays Dragons", "Solves Mysteries", "Spawns", "Translates(Special Focus)", "Wields Two Weapons At Once", "Words Miracles", "Works the System" }, (random.randint(2, 6)))
+    print("Foci: ", foci)
+    #Picks a random number from 3-9 and displays a that many foci randomly from those provided
+
+    skills = random.sample({"Astronomy", "Balancing", "Biology", "Botany", "Carrying", "Climbing", "Deceiving", "Escaping", "Geography", "Geology", "Healing", "History", "Identifying", "Initiative", "Intimidation", "Jumping", "Leatherworking", "Lockpicking", "The Strange", "Metalworking", "Perception", "Persuasion", "Philosophy", "Pickpocketing", "Repairing", "Riding", "Smashing", "Sneaking", "Swimming", "Woodworking"}, (random.randint(1, 3)))
+    print("Skills: ", skills)
+    #Picks 1-3 random skills from the list provided and displays them
+
+    agesize = random.sample({"Pocket Dimension", "Young Recursion", "Juvenile Recursion", "Developed Recursion", "Old Recursion", "Ascendant Recursion"}, 1)
+    print("Age and Size: ", agesize)
+    #Picks a single age category for the recursion, from Pocket Dimension to Ascendant
+
+    sparkconcentrate = random.randrange(0, 101, 2)
+    print("Spark: ", sparkconcentrate,"%")
+    #Gives a percentage range between 0 and 100 %
+
+    trait = random.sample({"Appealing", "Brash", "Clever", "Fast", "Graceful", "Intelligent", "Lucky", "Sharp-Eyed", "Skeptical", "Stealthy", "Strange", "Strong", "Tough", "Strong-Willed", "Learned", "Rugged", "Craven", "Cruel", "Doomed", "Clumsy", "Dishonorable", "Driven", "Empathic", "Exiled", "Foolish", "Guarded", "Hardy", "Hideous", "Honorable", "Impulsive", "Inquisitive", "Mad", "Naive", "Noble", "Perceptive", "Tongue-Tied", "Vengeful", "Weird"}, 1)
+    print("Trait: ", trait)
+    #Picks one random trait from a list of descriptors
+Recursion()
