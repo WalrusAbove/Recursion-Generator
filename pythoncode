@@ -4,11 +4,15 @@ def Recursion():
 
     level = random.randint(1, 10)
     print("Level: ", level)
-    #Displays a recursion Level between 1-10
+    #Displays a random whole number between 1-10
 
-    law = random.sample({"Standard", "Substandard", "Magic", "MadScience", "Psionics", "Exotic"}, 1)
-    print("Laws: ", law)
-    #Picks a random natural law and displays it under Laws:
+    if level <= 4:
+        law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics"}, 1)
+        print("Law: ", law)
+    else:
+        law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics", "Exotic Physics"}, 1)
+        print("Law: ", law)
+    #Displays a random physical law. If lower than level 5 will never display "Exotic Physics". Credit Eric Vail (syntax help)
 
     race = random.sample({"Human", "Qephilim", "Mutant", "Kro", "Vampire", "Sacrosanct", "Talking Animal"}, (random.randint(1, 2)))
     print("Playable Races: ", race)
