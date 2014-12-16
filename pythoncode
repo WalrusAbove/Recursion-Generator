@@ -4,7 +4,7 @@ def Recursion():
 
     level = random.randint(1, 10)
     print("Level: ", level)
-    #Displays a random whole number between 1-10
+    #Displays a random whole integer between 1-10
 
     if level <= 4:
         law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics"}, 1)
@@ -18,7 +18,7 @@ def Recursion():
         print("Playable Races: Human")
     else:
         randomize1 = random.randint(1, 100)
-        if randomize1 <= 90:
+        if randomize1 >= 90:
             specrace = random.sample({"Human", "Qephilim", "Vampire", "Werewolf", "Sacrosanct", "Talking Animals"}, random.randint(1, 2))
             print("Playable Races: ", specrace)
         else:
@@ -27,15 +27,33 @@ def Recursion():
 
     foci = random.sample({"Abides in Stone", "Awakens Dangerous Psychic Talent", "Carries a Quiver", "Channels Sinfire", "Conducts Weird Science", "Embraces Native Ancestry", "Entertains", "Infiltrates", "Integrates Weaponry", "Is Licensed to Carry", "Leads", "Lives in the Wilderness", "Looks for Trouble", "Metamorphosizes", "Operates Undercover", "Practices Soul Sorcery", "Processes Information", "Regenerates Tissue", "Sheperds the Dead", "Slays Dragons", "Solves Mysteries", "Spawns", "Translates(Special Focus)", "Wields Two Weapons At Once", "Words Miracles", "Works the System" }, (random.randint(2, 6)))
     print("Foci: ", foci)
-    #Picks a random number from 3-9 and displays a that many foci randomly from those provided
+    #Picks a random integer from 3-9 and displays a that many foci randomly from those provided
 
     skills = random.sample({"Astronomy", "Balancing", "Biology", "Botany", "Carrying", "Climbing", "Deceiving", "Escaping", "Geography", "Geology", "Healing", "History", "Identifying", "Initiative", "Intimidation", "Jumping", "Leatherworking", "Lockpicking", "The Strange", "Metalworking", "Perception", "Persuasion", "Philosophy", "Pickpocketing", "Repairing", "Riding", "Smashing", "Sneaking", "Swimming", "Woodworking"}, (random.randint(1, 3)))
     print("Skills: ", skills)
     #Picks 1-3 random skills from the list provided and displays them
 
-    agesize = random.sample({"Pocket Dimension", "Young Recursion", "Juvenile Recursion", "Developed Recursion", "Old Recursion", "Ascendant Recursion"}, 1)
-    print("Age and Size: ", agesize)
-    #Picks a single age category for the recursion, from Pocket Dimension to Ascendant
+
+    randomize2 = random.randint(1,1000)
+    #Generates a random integer between 1 and 1000
+    if randomize2 >= 900:
+        print("Age and Size: Ascendant Recursion")
+    else:
+        if level <= 1:
+            print("Age and Size: Pocket Dimension")
+        else:
+            if level <= 2:
+                print("Age and Size: Young Recursion")
+            else:
+                if level <= 4:
+                    print("Age and Size: Juvenile Recursion")
+                else:
+                    if level <= 7:
+                        print("Age and Size: Developed Recursion")
+                    else:
+                        if level <= 10:
+                            print("Age and Size: Old Recursion")
+    #Displays age and size depending on recursion level. 1/100 chance of recursion being Ascendant independent of level
 
     sparkconcentrate = random.randrange(0, 101, 2)
     print("Spark: ", sparkconcentrate,"%")
