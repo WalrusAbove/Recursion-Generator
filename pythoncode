@@ -27,7 +27,7 @@ def Recursion():
 
     foci = random.sample({"Abides in Stone", "Awakens Dangerous Psychic Talent", "Carries a Quiver", "Channels Sinfire", "Conducts Weird Science", "Embraces Native Ancestry", "Entertains", "Infiltrates", "Integrates Weaponry", "Is Licensed to Carry", "Leads", "Lives in the Wilderness", "Looks for Trouble", "Metamorphosizes", "Operates Undercover", "Practices Soul Sorcery", "Processes Information", "Regenerates Tissue", "Sheperds the Dead", "Slays Dragons", "Solves Mysteries", "Spawns", "Translates(Special Focus)", "Wields Two Weapons At Once", "Words Miracles", "Works the System" }, (random.randint(2, 6)))
     print("Foci: ", foci)
-    #Picks a random integer from 3-9 and displays a that many foci randomly from those provided
+    #Picks a random integer from 3-9 and displays that many foci randomly from those provided
 
     randomize2 = random.randint(1,100)
     #Generates random integer between 1 and 100
@@ -64,9 +64,26 @@ def Recursion():
                             print("Age and Size: Old Recursion")
     #Displays age and size depending on recursion level. 1/100 chance of recursion being Ascendant independent of level
 
-    sparkconcentrate = random.randrange(0, 101, 2)
-    print("Spark: ", sparkconcentrate,"%")
-    #Gives a percentage range between 0 and 100 %
+    if level <= 1:
+        spark1 = random.randrange(0, 21, 2)
+        print("Spark: ", spark1, "%")
+    else:
+        if level <= 2:
+            spark2 = random.randrange(0, 41, 2)
+            print("Spark: ", spark2, "%")
+        else:
+            if level <= 4:
+                spark3 = random.randrange(0, 61, 2)
+                print("Spark: ", spark3, "%")
+            else:
+                if level <= 7:
+                    spark4 = random.randrange(0, 81, 2)
+                    print("Spark: ", spark4, "%")
+                else:
+                    if level <= 10:
+                        spark5 = random.randrange(0, 101, 2)
+                        print("Spark: ", spark5, "%")
+    #Displays percentage of inhabitants with the spark, based on recursion level.
 
     trait = random.sample({"Appealing", "Brash", "Clever", "Fast", "Graceful", "Intelligent", "Lucky", "Sharp-Eyed", "Skeptical", "Stealthy", "Strange", "Strong", "Tough", "Strong-Willed", "Learned", "Rugged", "Craven", "Cruel", "Doomed", "Clumsy", "Dishonorable", "Driven", "Empathic", "Exiled", "Foolish", "Guarded", "Hardy", "Hideous", "Honorable", "Impulsive", "Inquisitive", "Mad", "Naive", "Noble", "Perceptive", "Tongue-Tied", "Vengeful", "Weird"}, 1)
     print("Trait: ", trait)
