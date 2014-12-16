@@ -14,9 +14,16 @@ def Recursion():
         print("Law: ", law)
     #Displays a random physical law. If lower than level 5 will never display "Exotic Physics". Credit Eric Vail (syntax help)
 
-    race = random.sample({"Human", "Qephilim", "Mutant", "Kro", "Vampire", "Sacrosanct", "Talking Animal"}, (random.randint(1, 2)))
-    print("Playable Races: ", race)
-    #Picks a random race from pre-made races in The Strange corebook. Human is default.
+    if level <= 4:
+        print("Playable Races: Human")
+    else:
+        randomize1 = random.randint(1, 100)
+        if randomize1 <= 90:
+            specrace = random.sample({"Human", "Qephilim", "Vampire", "Werewolf", "Sacrosanct", "Talking Animals"}, random.randint(1, 2))
+            print("Playable Races: ", specrace)
+        else:
+            print("Playable Races: Human")
+    #Displays random playable race. Level 4 and lower can only display Human, while there is a 10% chance of something else if 5 or higher
 
     foci = random.sample({"Abides in Stone", "Awakens Dangerous Psychic Talent", "Carries a Quiver", "Channels Sinfire", "Conducts Weird Science", "Embraces Native Ancestry", "Entertains", "Infiltrates", "Integrates Weaponry", "Is Licensed to Carry", "Leads", "Lives in the Wilderness", "Looks for Trouble", "Metamorphosizes", "Operates Undercover", "Practices Soul Sorcery", "Processes Information", "Regenerates Tissue", "Sheperds the Dead", "Slays Dragons", "Solves Mysteries", "Spawns", "Translates(Special Focus)", "Wields Two Weapons At Once", "Words Miracles", "Works the System" }, (random.randint(2, 6)))
     print("Foci: ", foci)
