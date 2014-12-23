@@ -6,12 +6,15 @@ def Recursion():
     print("Level: ", level)
     #Displays a random whole integer between 1-10
 
-    if level <= 4:
-        law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics"}, 1)
-        print("Law: ", law)
+    if level <= 2:
+        print("Law: Standard Physics")
     else:
-        law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics", "Exotic Physics"}, 1)
-        print("Law: ", law)
+        if level <= 4:
+                law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics"}, 1)
+                print("Law: ", law)
+        else:
+            law = random.sample({"Standard Physics", "Magic", "Mad Science", "Substandard Physics", "Psionics", "Exotic Physics"}, 1)
+            print("Law: ", law)
     #Displays a random physical law. If lower than level 5 will never display "Exotic Physics". Credit Eric Vail (syntax help)
 
     if level <= 4:
@@ -68,29 +71,3 @@ def Recursion():
                         if level <= 10:
                             print("Age and Size: Old Recursion")
     #Displays age and size depending on recursion level. 1/100 chance of recursion being Ascendant independent of level
-
-    if level <= 1:
-        spark1 = random.randrange(0, 21, 2)
-        print("Spark: ", spark1, "%")
-    else:
-        if level <= 2:
-            spark2 = random.randrange(0, 41, 2)
-            print("Spark: ", spark2, "%")
-        else:
-            if level <= 4:
-                spark3 = random.randrange(0, 61, 2)
-                print("Spark: ", spark3, "%")
-            else:
-                if level <= 7:
-                    spark4 = random.randrange(0, 81, 2)
-                    print("Spark: ", spark4, "%")
-                else:
-                    if level <= 10:
-                        spark5 = random.randrange(0, 101, 2)
-                        print("Spark: ", spark5, "%")
-    #Displays percentage of inhabitants with the spark, based on recursion level.
-
-    trait = random.sample({"Appealing", "Brash", "Clever", "Fast", "Graceful", "Intelligent", "Lucky", "Sharp-Eyed", "Skeptical", "Stealthy", "Strange", "Strong", "Tough", "Strong-Willed", "Learned", "Rugged", "Craven", "Cruel", "Doomed", "Clumsy", "Dishonorable", "Driven", "Empathic", "Exiled", "Foolish", "Guarded", "Hardy", "Hideous", "Honorable", "Impulsive", "Inquisitive", "Mad", "Naive", "Noble", "Perceptive", "Tongue-Tied", "Vengeful", "Weird"}, 1)
-    print("Trait: ", trait)
-    #Picks one random trait from a list of descriptors
-Recursion()
